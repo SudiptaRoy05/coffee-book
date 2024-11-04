@@ -1,21 +1,21 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div className="navbar bg-base-100 md:w-11/12 mx-auto">
+    <div className="navbar backdrop-blur-xl  mx-auto fixed z-50">
       <div className="flex-1">
-        <Link className="btn btn-ghost text-xl">Coffee</Link>
+        <NavLink to='/' className="btn btn-ghost text-xl">Coffee</NavLink>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-warning' : 'hover:text-warning'}`} to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/Coffees">Coffees</Link>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-warning' : 'hover:text-warning'}`} to="/Coffees">Coffees</NavLink>
           </li>
           <li>
-            <Link to="/dashboard">Dashbaord</Link>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-warning' : 'hover:text-warning'}`} to="/dashboard">Dashbaord</NavLink>
           </li>
         </ul>
       </div>
